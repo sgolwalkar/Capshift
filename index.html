@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Compare the last ten earnings reports from NVIDIA, Microsoft and Apple.">
+  <title>Signal / Earnings Common Ground</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Signal home"><span class="brand-mark">S/</span><span>SIGNAL</span></a>
+    <nav aria-label="Primary navigation">
+      <a href="#common-ground">Common ground</a>
+      <a href="#ask">Ask reports</a>
+      <a href="#market-map">Market map</a>
+    </nav>
+    <div class="status"><span></span>30 reports indexed</div>
+  </header>
+
+  <main id="top">
+    <section class="hero section-pad">
+      <div class="eyebrow">EARNINGS INTELLIGENCE / 2024—2026</div>
+      <h1>Three giants.<br><em>One underlying signal.</em></h1>
+      <p class="hero-copy">Search 30 earnings releases from NVIDIA, Microsoft and Apple. Compare the language, trace the numbers, and inspect the exact source blocks behind every answer.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#ask">Query the reports <span>↘</span></a>
+        <a class="button secondary" href="#market-map">Explore the market map</a>
+      </div>
+      <div class="hero-ticker" aria-label="Latest quarter revenue">
+        <div><span class="ticker-company nvda">NVDA</span><strong>$81.6B</strong><small>Q1 FY27 · +85% YoY</small></div>
+        <div><span class="ticker-company msft">MSFT</span><strong>$82.9B</strong><small>Q3 FY26 · +18% YoY</small></div>
+        <div><span class="ticker-company aapl">AAPL</span><strong>$111.2B</strong><small>Q2 FY26 · +17% YoY</small></div>
+      </div>
+    </section>
+
+    <section class="marquee" aria-hidden="true"><div>AI INFRASTRUCTURE ◆ MARGIN DISCIPLINE ◆ CAPITAL RETURNS ◆ SERVICES GROWTH ◆ SUPPLY CONSTRAINTS ◆ AI INFRASTRUCTURE ◆ MARGIN DISCIPLINE ◆ CAPITAL RETURNS ◆ SERVICES GROWTH ◆</div></section>
+
+    <section id="common-ground" class="section-pad common-section">
+      <div class="section-heading">
+        <div><span class="section-index">01</span><span class="eyebrow">COMMON GROUND</span></div>
+        <h2>The narratives converge<br>before the numbers do.</h2>
+        <p>Across 30 releases, five recurring ideas connect how the companies explain growth, investment and risk.</p>
+      </div>
+      <div id="theme-grid" class="theme-grid"></div>
+    </section>
+
+    <section id="ask" class="ask-section section-pad">
+      <div class="ask-shell">
+        <div class="ask-intro">
+          <div><span class="section-index">02</span><span class="eyebrow">QUERY THE CORPUS</span></div>
+          <h2>Ask the<br><em>earnings.</em></h2>
+          <p>Answers are assembled in your browser from an indexed dataset. Every claim is paired with an exact excerpt and a link to the official release.</p>
+          <div class="sample-label">TRY A QUESTION</div>
+          <div class="prompt-list">
+            <button data-query="What are all three companies saying about AI demand?">AI demand across all three</button>
+            <button data-query="Compare revenue growth and margins">Revenue growth & margins</button>
+            <button data-query="What risks or constraints appear most often?">Recurring risks & constraints</button>
+            <button data-query="How do they discuss capital spending and investment?">Capital spending & investment</button>
+          </div>
+        </div>
+        <div class="query-panel">
+          <form id="query-form">
+            <label for="query-input">Search all 30 reports</label>
+            <div class="query-box">
+              <textarea id="query-input" rows="3" placeholder="e.g. How does AI show up in each company’s growth story?"></textarea>
+              <button type="submit" aria-label="Search reports">↑</button>
+            </div>
+            <div class="query-options">
+              <label><input type="checkbox" value="NVIDIA" checked> NVIDIA</label>
+              <label><input type="checkbox" value="Microsoft" checked> Microsoft</label>
+              <label><input type="checkbox" value="Apple" checked> Apple</label>
+              <span>Exact-source mode</span>
+            </div>
+          </form>
+          <div id="answer" class="answer" aria-live="polite">
+            <div class="answer-empty">
+              <div class="radar" aria-hidden="true"><span></span><span></span><span></span><i></i></div>
+              <p>Ask a question to scan the earnings corpus.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="market-map" class="market-section section-pad">
+      <div class="section-heading market-heading">
+        <div><span class="section-index">03</span><span class="eyebrow">POST-EARNINGS MARKET MAP</span></div>
+        <h2>Fundamentals meet<br><em>expectations.</em></h2>
+        <p>Move across each company’s last ten reports. Revenue is reported; market cap and trailing P/E are approximate snapshots at the first close after each release.</p>
+      </div>
+
+      <div class="metric-switch" role="group" aria-label="Chart metric">
+        <button class="active" data-metric="revenue">Revenue <span>$B</span></button>
+        <button data-metric="marketCap">Market cap <span>$T</span></button>
+        <button data-metric="pe">P/E ratio <span>x</span></button>
+      </div>
+
+      <div class="chart-wrap">
+        <div class="chart-topline">
+          <div class="legend"><span><i class="nvda-bg"></i>NVIDIA</span><span><i class="msft-bg"></i>Microsoft</span><span><i class="aapl-bg"></i>Apple</span></div>
+          <div id="chart-note">Quarterly revenue ($B)</div>
+        </div>
+        <svg id="market-chart" viewBox="0 0 1120 480" role="img" aria-labelledby="chart-title chart-desc">
+          <title id="chart-title">Earnings comparison chart</title>
+          <desc id="chart-desc">Comparison of revenue, market capitalization, or price to earnings ratio across ten earnings reports.</desc>
+        </svg>
+        <div id="chart-tooltip" class="chart-tooltip" hidden></div>
+      </div>
+
+      <div id="snapshot" class="snapshot"></div>
+      <p class="method-note"><strong>Method:</strong> Revenue is taken from official quarterly releases. Market cap and P/E are rounded research snapshots intended for directional comparison, not trading or investment decisions. “Shift” is the change from the prior indexed earnings snapshot. Dates are release dates.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand"><span class="brand-mark">S/</span><span>SIGNAL</span></div>
+    <p>Primary sources: NVIDIA, Microsoft and Apple investor relations.</p>
+    <p>Built for comparative research · Updated May 2026</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
